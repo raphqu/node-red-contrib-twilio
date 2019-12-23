@@ -1,32 +1,36 @@
-# Node-RED Twilio®
+# Node-RED Call Control for Twilio® TwiML® platforms
 
-This repository contains a collection of nodes which implements [Twilio API](https://www.twilio.com/docs).
+This repository contains a collection of nodes which implement a [Twilio compliant API](https://www.twilio.com/docs).
 
-_This is a community project. Twilio and TwiML are registered trademarks of Twilio and/or its affiliates. Other names may be trademarks of their respective owners. Automat Berlin GmbH as well as the initial authors of this module are not affiliated with, nor endorsed by, nor connected in any way to Twilio Inc. or any of its affiliates._
+_This is a community project._
 
-## Quick start
+_Twilio and TwiML are registered trademarks of Twilio and/or its affiliates. Other names may be trademarks of their respective owners._
+
+_Automat Berlin GmbH as well as the authors of this module are not affiliated with, nor endorsed by, nor connected in any way to Twilio Inc. or any of its affiliates._
+
+## Quickstart
 
 You can get hands-on experience with Node-RED and Twilio nodes by deploying them to [Heroku](https://www.heroku.com). You only need a free account (no credit card required).
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Note: Deploy to Heroku button will not work properly if your browser is removing Referer HTTP header from the request.
+Note: The 'Deploy to Heroku' button will not work properly if your browser is removing the Referer HTTP header from the request.
 
 ## Installation
 
-Prerequisite: You need to have a running Node-RED instance. If you don't have yet, read [Node-RED Getting Started guide](https://nodered.org/docs/getting-started/).
+Prerequisite: You need to have a running Node-RED instance. If you do not have it installed yet, read the [Node-RED Getting Started guide](https://nodered.org/docs/getting-started/).
 
-### Install last released version from Node-RED dashboard
+### Install the last released version from the Node-RED dashboard
 
-The easiest way to install Twilio nodes is to use `Manage palette` option in Node-RED menu (in the top right corner of its dashboard). Switch to `Install` tab and search for `@automat-berlin/node-red-contrib-twilio`. There should be only one result. Click the `install` button nearby it.
+The easiest way to install Twilio nodes is to use the `Manage palette` option in the Node-RED menu (in the top right corner of its dashboard). Switch to the `Install` tab and search for `@automat-berlin/node-red-contrib-twilio`. There should be only one result. Click the `install` button next to it.
 
-### Install from the source code
+### Installation from the source code
 
-First clone this repository. Optionally switch to the desired branch.
+First, clone this repository. Optionally switch to the desired branch.
 
-Next, go to the Node-RED install directory, typically `~/.node-red` and install there the cloned package.
+Next, go to the Node-RED install directory, typically `~/.node-red`, and install the cloned package there.
 
-```
+```sh
 cd ~/.node-red/
 npm install <path-to-cloned-repository>
 ```
@@ -35,15 +39,15 @@ npm install <path-to-cloned-repository>
 
 You should be aware of how to configure Node-RED ([read the docs here](https://nodered.org/docs/user-guide/runtime/settings-file)).
 
-Following instructions assume that you are using `settings.js` file for configuration (found in the user directory or specified with `-s` command-line argument).
+The following instructions assume that you are using the `settings.js` file for the configuration (found in the user directory or specified with `-s` command-line argument).
 
 ### Set baseUrl for StatusCallback
 
-The base URL will be used to create absolute `StatusCallback` URL (read more about callback requests [here](https://www.twilio.com/docs/voice/twiml#ending-the-call-callback-requests)).
+The base URL will be used to create an absolute `StatusCallback` URL (read more about callback requests [here](https://www.twilio.com/docs/voice/twiml#ending-the-call-callback-requests)).
 
-Find `functionGlobalContext` object and add `baseUrl` property with the base URL of your Node-RED deployment.
+Find the `functionGlobalContext` object and add the `baseUrl` property with the base URL of your Node-RED deployment.
 
-```
+```javascript
     ...
     functionGlobalContext: {
         baseUrl: 'http://example.com'
@@ -55,13 +59,13 @@ Find `functionGlobalContext` object and add `baseUrl` property with the base URL
 
 First, go to the repository's main directory and install all dependencies:
 
-```
+```sh
 npm install
 ```
 
 Then to run all tests use this command:
 
-```
+```sh
 npm test
 ```
 
@@ -69,7 +73,7 @@ npm test
 
 We welcome all contributions. Please read our [contributing guidelines](CONTRIBUTING.md).
 
-Contact us if you have any questions via email info@automat.berlin or create an issue.
+Contact us if you have any questions via email at info@automat.berlin or create an issue.
 
 ## Contact
 
