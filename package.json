@@ -1,0 +1,62 @@
+{
+  "name": "@automat-berlin/node-red-contrib-twilio",
+  "version": "0.0.1",
+  "homepage": "https://automat.berlin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/automat-berlin/node-red-contrib-twilio"
+  },
+  "bugs": {
+    "url": "https://github.com/automat-berlin/node-red-contrib-twilio/issues",
+    "email": "info@automat.berlin"
+  },
+  "license": "MIT",
+  "node-red": {
+    "nodes": {
+      "dial": "nodes/voice/dial.js",
+      "gather": "nodes/voice/gather.js",
+      "hangup-call": "nodes/voice/hangup-call.js",
+      "hangup": "nodes/voice/hangup.js",
+      "message": "nodes/sms/message.js",
+      "play": "nodes/voice/play.js",
+      "redirect": "nodes/sms/redirect.js",
+      "reject": "nodes/voice/reject.js",
+      "say": "nodes/voice/say.js",
+      "webhook": "nodes/webhook.js"
+    }
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "twilio": "^3.36.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "mocha": "^6.2.2",
+    "nock": "^11.7.0",
+    "node-red": "^1.0.2",
+    "node-red-node-test-helper": "^0.2.3",
+    "prettier": "^1.18.2",
+    "should": "^13.2.3"
+  },
+  "scripts": {
+    "format": "node_modules/.bin/prettier --write \"**/*.{html,js,md}\"",
+    "lint": "node_modules/.bin/eslint --fix .",
+    "start": "node node_modules/node-red/red.js --settings settings.js",
+    "test": "node_modules/.bin/mocha \"test/**/*_spec.js\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{html,js,md}": [
+      "prettier --list-different"
+    ],
+    ".": [
+      "eslint"
+    ]
+  }
+}

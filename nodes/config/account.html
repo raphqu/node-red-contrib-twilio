@@ -1,0 +1,45 @@
+<script type="text/javascript">
+  RED.nodes.registerType('account', {
+    category: 'config',
+    defaults: {
+      name: { value: '', required: true },
+    },
+    credentials: {
+      sid: { type: 'text' },
+      token: { type: 'password' },
+      apiUrl: { type: 'text' },
+    },
+    label: function() {
+      return this.name || '<unnamed account>';
+    },
+  });
+</script>
+
+<script type="text/x-red" data-template-name="account">
+  <div class="form-row">
+    <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-config-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-sid"><i class="fa fa-user"></i> Account SID</label>
+    <input type="text" id="node-config-input-sid" placeholder="Account SID">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-token"><i class="fa fa-key"></i> Auth token</label>
+    <input type="password" id="node-config-input-token" placeholder="Auth token">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-apiUrl"><i class="fa fa-user"></i> API URL</label>
+    <input type="text" id="node-config-input-apiUrl" placeholder="https://api.twilio.com">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="account">
+  <p>Manage Twilio account configuration.</p>
+
+  <h3>Details</h3>
+  <p><code>Account SID</code> and <code>Auth token</code> are required to authorize HTTP requests sent to the Twilio
+     REST API. For security reasons they are omitted when flows are exported from the editor.</p>
+  <p><code>Name</code> property is shown on selection lists to easily switch between different account
+     configurations.</p>
+</script>
