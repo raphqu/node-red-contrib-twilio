@@ -45,8 +45,10 @@
     "should": "^13.2.3"
   },
   "scripts": {
-    "format": "node_modules/.bin/prettier --write \"**/*.{html,js,md}\"",
-    "lint": "node_modules/.bin/eslint --fix .",
+    "prettier:format": "node_modules/.bin/prettier --write \"**/*.{html,js,md}\"",
+    "prettier:check": "node_modules/.bin/prettier --check \"**/*.{html,js,md}\"",
+    "lint": "node_modules/.bin/eslint .",
+    "lint:fix": "npm run lint -- --fix",
     "start": "node node_modules/node-red/red.js --settings settings.js",
     "test": "node_modules/.bin/mocha \"test/**/*_spec.js\""
   },
