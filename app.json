@@ -9,8 +9,5 @@
       "description": "Repeat app name to make it available inside the app.",
       "required": true
     }
-  },
-  "addons": [
-    "mongolab:sandbox"
-  ]
+  }
 }
